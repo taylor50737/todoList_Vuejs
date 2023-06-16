@@ -51,26 +51,26 @@ onMounted(() => {
 
     <section class="greeting">
       <h2 class="title">
-        今日有咩搞呀？
+        What's up!
         <input
           type="text"
-          placeholder="你的名字"
+          placeholder="Your Name"
           v-model="name"
         />
       </h2>
     </section>
 
     <section class="create-todo">
-      <h3>創建待辦事項</h3>
+      <h3>Create To-do Item</h3>
 
       <form @submit.prevent="addTodo">
-        <h4>有咩要做呀？</h4>
+        <h4>What are you going to do?</h4>
         <input
             type="text"
             placeholder="e.g. Coding"
             v-model="input_content"
         />
-        <h4>揀返個分類先啦</h4>
+        <h4>Pick a Category</h4>
 
         <div class="options">
           <label>
@@ -81,7 +81,7 @@ onMounted(() => {
                 v-model="input_category"
             />
             <span class="bubble business"></span>
-            <div>工作</div>
+            <div>Work</div>
           </label>
           <label>
             <input
@@ -91,17 +91,17 @@ onMounted(() => {
                 v-model="input_category"
             />
             <span class="bubble personal"></span>
-            <div>私人</div>
+            <div>Personal</div>
           </label>
 
         </div>
 
-        <input type="submit" value="創建待辦事項" />
+        <input type="submit" value="Create To-do Item" />
       </form>
     </section>
 
     <section class="todo-list">
-      <h3>待辦事項</h3>
+      <h3>To-do List:</h3>
       <div class="list">
         <div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
           <label>
@@ -112,7 +112,7 @@ onMounted(() => {
             <input type="text" v-model="todo.content" />
           </div>
           <div class="actions">
-            <button class="delete" @click="removeTodo(todo)">搞掂！</button>
+            <button class="delete" @click="removeTodo(todo)">Done !</button>
           </div>
         </div>
       </div>
